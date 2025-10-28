@@ -1,39 +1,40 @@
-# SQL Olympic Data Analysis
+# Team Screen Dashboard
 
 ## Project Overview
-This project analyzes data from over 100 years of the Olympic Games. Using SQL, the analysis explores a variety of trends in the data, such as:
-- Teams with the most participating athletes
-- Teams with the most medals
-- Mean athlete age
-- Additional historical trends and statistics
+This is an interactive dashboard designed to analyze and visualize data gained from performance screenings of competitive teams. The dashboard summarizes testing results to help identify strengths and development areas across a roster and to support coaching and athlete performance decisions.
 
 ## Audience
-This analysis is valuable for:
-- **Olympic Committees**: Shows long-term trends, highlights top-performing countries, and can help guide future decisions.
-- **Sports Commentators**: Provides historical context and interesting facts to share with fans.
-- **Sports Enthusiasts & Analysts**: Offers in-depth statistics and insights into the history of the Olympics.
+This dashboard is intended for:
+- Coaches of the teams
+- Individual athletes
+- Performance specialists and support staff associated with the team
 
 ## Features
-- Analysis of 100+ years of Olympic data (1896–2016)
-- Data cleaning, querying, and visualization using SQL (Snowflake)
-- Visual dashboards and presentations showcasing key findings
+- Uses data from six performance tests that capture speed, agility, and power metrics.
+- Computes team averages and ranks each athlete on individual tests and overall performance.
+- Standardizes scores using z-scores (relative to the team average) to create a composite "Total Score of Athleticism" (TSA).
+- Includes an Excel-based dashboard (see the `reports` folder) with three interactive tabs: Team Profile, Athlete Profile, and Athlete Profile Comparison.
+- Visualizations include bar charts, radar charts, and box-and-whisker plots to show distributions and comparisons.
 
 ## Project Structure
-- `/data`: Raw Olympic data (CSV files)
-- `/sql`: SQL scripts for data cleaning and analysis
-- `/visualizations`: Screenshots and exports of dashboards (Snowflake/SourceTable)
-- `/reports`: Project proposal, exploratory data analysis, and final presentation ([see here](https://github.com/mia-troiano/SQL-Olympic-Data/blob/main/reports/Project%20Proposal.pdf))
+- `/data`: Cleaned raw data used for the project (CSV/Excel files).
+- `/reports`: The Excel dashboard and downloadable report files.
+- `/visuals`: Screenshots of the dashboard tabs and visual outputs.
 
 ## Technologies Used
-- SQL (Snowflake)
-- SourceTable (for visualizations)
+- Excel (data cleaning, z-score calculations, and the dashboard workbook)
+- Standard chart types: bar charts, radar charts, box-and-whisker plots
 
 ## How to Use
-1. Review SQL scripts in `/sql` for detailed analysis queries.
-2. Browse dashboards in `/visualizations` for visual insights.
-3. Read detailed reports and the final presentation in `/reports` for key findings and context.
+1. Open the Excel dashboard found in the `/reports` folder.
+2. Explore the three main tabs:
+   - Team Profile: Shows raw team averages for each test, a bar graph of TSA for all athletes, and box-and-whisker breakdowns for each test (this tab is static/non-interactive).
+   - Athlete Profile: Interactive — select an athlete by their assigned number to view raw scores, per-test rankings versus the team, overall TSA ranking, and visualizations of z-scores (bar chart and radar chart).
+   - Athlete Profile Comparison: Compare two athletes side-by-side using radar charts and raw-score breakdowns against the team average.
+3. See the `/visuals` folder for screenshots of each dashboard tab.
+4. Inspect `/data` for the cleaned raw dataset. The raw data was generated from online sample testing protocols and cleaned in Excel prior to analysis.
 
 ## Key Insights
-- Historical trends in athlete participation
-- Medal counts by country and sport
-- Age and gender demographics across the years
+- The TSA (Total Score of Athleticism) provides a single standardized measure to rank athletes relative to their team using z-scores.
+- Z-score standardization enables fair comparisons across different test metrics (speed, agility, power).
+- Visual comparisons (radar charts and box plots) make it easy to identify an athlete's strengths and weaknesses relative to teammates and the team average.
